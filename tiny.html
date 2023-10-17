@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+   <head>
+
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.4.3/tinymce.min.js"></script> -->
+      <script src="https://cdn.tiny.cloud/1/your-api-key/tinymce/6/tinymce.min.js"></script>
+      <!-- <script src="./src/plugins/ice/plugin.min.js"></script> -->
+      <script src="./New folder/lib/rangy/rangy-core.js"></script>
+      <script src="./src/ice.js">
+      </script>
+  
+      <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+      <script src="./src/polyfills.js"></script>
+      <script src="./src/dom.js"></script>
+      <script src="./src/icePlugin.js"></script>
+      <script src="./src/icePluginManager.js">
+      </script>
+      <script src="./src/bookmark.js"></script>
+      <script src="./src/selection.js"></script>
+      <script
+          src="./src/plugins/IceAddTitlePlugin/IceAddTitlePlugin.js">
+      </script>
+      <script
+          src="./src/plugins/IceCopyPastePlugin/IceCopyPastePlugin.js">
+      </script>
+      <script
+          src="./src/plugins/IceEmdashPlugin/IceEmdashPlugin.js">
+      </script>
+      <script
+          src="./src/plugins/IceSmartQuotesPlugin/IceSmartQuotesPlugin.js">
+      </script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+      <script src="./src/jQuery/jquery-migrate-1.0.0.js"></script>
+      <script src="./src/jQuery/jquery.min.js"></script>
+      <script>
+         debugger
+         var nanospell_directory  = location.href.substring(0,location.href.lastIndexOf("/")+1);
+         //nanospell_directory is an absolute url for the nanospell plugin folder.  
+         //In this example we use JS to cheat ;)
+         
+      //     tinymce.init({
+      //        selector:'textarea',
+      //        external_plugins: {"nanospell": nanospell_directory+"plugin.js", "ice": nanospell_directory + 'src/ice.js' },
+      //        nanospell_server: "php", // choose "php" "asp" "asp.net" or "java"
+      //        nanospell_autostart:true,
+      //        ice: {
+      //     user: { name: 'Miss T', id: 1},
+      //     preserveOnPaste: 'p,a[href],i,em,strong',
+      //     // Optional param - defaults to the css found in the plugin directory
+      //     css: 'http://example.com/custom.css'
+      //   }
+
+      //        }); 
+   // tinymce.init ({
+   //    selector:'textarea',
+   //      plugins: {"nanospell": nanospell_directory+"plugin.js", "ice": nanospell_directory + 'src/plugins/ice/plugin.min.js' },
+   //    //   theme_advanced_buttons1: 'ice_togglechanges,ice_toggleshowchanges,iceacceptall,icerejectall,iceaccept,icereject',
+   //      ice: {
+   //        user: { name: 'Miss T', id: 1},
+   //        preserveOnPaste: 'p,a[href],i,em,strong',
+   //        // Optional param - defaults to the css found in the plugin directory
+   //        css: 'http://example.com/custom.css'
+   //      }
+   //    });
+
+      const icePluginPath = nanospell_directory + 'src/plugins/ice/plugin.min.js';
+// const nanospellPluginPath = nanospell_directory+"plugin.js";
+
+// Initialize TinyMCE with the specified plugins
+tinymce.init({
+  selector: 'textarea', // Replace with your selector
+  content_style: ".ins { background-color: #9ae39a !important; } .del { background-color: #f3b0b0; }",
+  plugins: 'pluginId', // Add your plugin name to the list of plugins
+  external_plugins: {
+    'pluginId': icePluginPath // Specify the path to your custom plugin
+  },
+});
+      </script>
+
+   </head>
+   <body>
+      <textarea style="color:red">Easy! You should check out TinyMceSpellCheck.com!</textarea>
+   </body>
+</html>
